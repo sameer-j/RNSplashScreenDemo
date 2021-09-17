@@ -1,6 +1,8 @@
 package com.rnsplashscreendemo;
 
 import com.facebook.react.ReactActivity;
+import org.devio.rn.splashscreen.SplashScreen; // add this
+import android.os.Bundle; // add this
 
 public class MainActivity extends ReactActivity {
 
@@ -11,5 +13,12 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "RNSplashScreenDemo";
+  }
+
+  // add this function
+  @Override 
+  protected void onCreate(Bundle savedInstanceState) {
+      SplashScreen.show(this);
+      super.onCreate(savedInstanceState);
   }
 }
